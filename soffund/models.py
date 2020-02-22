@@ -24,10 +24,10 @@ class Child(models.Model):
 	diagnos = models.TextField('Диагноз')
 	photo = models.ImageField('Изображение', upload_to='main_photo/')
 	url = models.SlugField(max_length=130, unique=True)
-	money = models.PositiveSmallIntegerField('Необходимая сумма')
+	money = models.PositiveSmallIntegerField('Необходимая сумма в долларах')
 	category = models.ForeignKey(Category, verbose_name='Категория', on_delete=models.CASCADE)
-	pay_date = models.DateField('Дата оплаты')
-	pay_description = models.TextField('Описание оплаты', help_text='Иванову С. было оплачено лечение')
+	pay_date = models.DateField('Дата оплаты', blank=True, null=True)
+	pay_description = models.TextField('Описание оплаты', help_text='Иванову С. было оплачено лечение', blank=True, null=True)
 	full_name = models.CharField('ФИО в дательном падеже', max_length=150)
 
 	def __str__(self):
