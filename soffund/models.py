@@ -1,6 +1,5 @@
 from django.db import models
 from django.urls import reverse
-from datetime import time, date
 
 
 class Category(models.Model):
@@ -27,8 +26,11 @@ class Child(models.Model):
 	money = models.PositiveSmallIntegerField('Необходимая сумма в долларах')
 	category = models.ForeignKey(Category, verbose_name='Категория', on_delete=models.CASCADE)
 	pay_date = models.DateField('Дата оплаты', blank=True, null=True)
-	pay_description = models.TextField('Описание оплаты', help_text='Иванову С. было оплачено лечение', blank=True, null=True)
+	pay_description = models.TextField(
+		'Описание оплаты', help_text='Иванову С. было оплачено лечение', blank=True, null=True
+	)
 	full_name = models.CharField('ФИО в дательном падеже', max_length=150)
+	draft = models.BooleanField('Показ на сайте', default=True)
 
 	def __str__(self):
 		return self.name

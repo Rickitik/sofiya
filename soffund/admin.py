@@ -11,7 +11,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Child)
 class ChildAdmin(admin.ModelAdmin):
-	list_display = ('surname', 'name', 'lastname', 'birthday', 'get_image', 'category', 'money')
+	list_display = ('id', 'surname', 'name', 'lastname', 'birthday', 'get_image', 'category', 'money')
 	readonly_fields = ('get_image',)
 	list_display_links = ('surname', 'name')  # Ссылка по имени и фамилии на основную запись
 	list_filter = ('category',)  # Фильтр по категории

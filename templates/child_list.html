@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .container-1{
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
+    .container-1 div{
+
+    }
+    .box{
+
+    }
+    .side-bar{
+
+    }
+    .datas{
+
+    }
+</style>
+<div class="container-1">
+    <div class="side-bar">  Something here...</div>
+    <div class="datas">
+        {% for child in child_list %}
+        <div class="box">
+            {{ child.surname }}
+            {{ child.name }}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur corporis dolorum eos,
+            eveniet expedita facilis fugit nisi omnis pariatur quidem quis reiciendis repellat repudiandae saepe,
+            similique soluta tenetur voluptates.
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
